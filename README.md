@@ -10,8 +10,12 @@
 
 - Convert multiple images to WebP format in bulk.
 - Simple and easy-to-use interface.
+- Modify WebP image size and quality.
+- Add icons to WebP images.
+- Add text to images with customizable text color and size.
 - Supports PNG, JPG, BMP, and other common image formats.
 - Open-source and free to use.
+- 
 
 ---
 
