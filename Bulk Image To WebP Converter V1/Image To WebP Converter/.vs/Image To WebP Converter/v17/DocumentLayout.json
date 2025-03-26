@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Image To WebP Converter\\Image To WebP Converter\\",
+  "WorkspaceRootPath": "D:\\Bulk Image To WebP Converter V1\\Image To WebP Converter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7E157FBB-90AC-4575-BDC2-D489D3C93167}|Image To WebP Converter.csproj|d:\\image to webp converter\\image to webp converter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E157FBB-90AC-4575-BDC2-D489D3C93167}|Image To WebP Converter.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E157FBB-90AC-4575-BDC2-D489D3C93167}|Image To WebP Converter.csproj|D:\\Image To WebP Converter\\Image To WebP Converter\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E157FBB-90AC-4575-BDC2-D489D3C93167}|Image To WebP Converter.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E157FBB-90AC-4575-BDC2-D489D3C93167}|Image To WebP Converter.csproj|D:\\Image To WebP Converter\\Image To WebP Converter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7E157FBB-90AC-4575-BDC2-D489D3C93167}|Image To WebP Converter.csproj|D:\\Bulk Image To WebP Converter V1\\Image To WebP Converter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7E157FBB-90AC-4575-BDC2-D489D3C93167}|Image To WebP Converter.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E157FBB-90AC-4575-BDC2-D489D3C93167}|Image To WebP Converter.csproj|d:\\bulk image to webp converter v1\\image to webp converter\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E157FBB-90AC-4575-BDC2-D489D3C93167}|Image To WebP Converter.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,47 +18,40 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\Image To WebP Converter\\Image To WebP Converter\\Form1.cs",
+              "DocumentMoniker": "D:\\Bulk Image To WebP Converter V1\\Image To WebP Converter\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\Image To WebP Converter\\Image To WebP Converter\\Form1.cs",
+              "ToolTip": "D:\\Bulk Image To WebP Converter V1\\Image To WebP Converter\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAACkCAAAAAAAAAAAAwEYCAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8CAAAAAAAAAAAAwEYCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T06:09:46.76Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "D:\\Image To WebP Converter\\Image To WebP Converter\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "D:\\Image To WebP Converter\\Image To WebP Converter\\Form1.Designer.cs",
-              "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T06:08:47.625Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\Image To WebP Converter\\Image To WebP Converter\\Form1.cs",
+              "DocumentMoniker": "D:\\Bulk Image To WebP Converter V1\\Image To WebP Converter\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\Image To WebP Converter\\Image To WebP Converter\\Form1.cs [Design]",
+              "ToolTip": "D:\\Bulk Image To WebP Converter V1\\Image To WebP Converter\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T06:08:40.472Z"
+              "WhenOpened": "2025-03-21T06:08:40.472Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

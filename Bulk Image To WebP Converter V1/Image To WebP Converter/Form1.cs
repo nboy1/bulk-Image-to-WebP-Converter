@@ -36,7 +36,7 @@ namespace Image_To_WebP_Converter
             this.MouseDown += Form1_MouseDown;
 
             colorDialog = new ColorDialog();
-            // Ensure the RichTextBox is hidden initially
+
             Add_Text_RichBox.Visible = false;
             FontSizetextBox1.Visible = false;
             Select_Logo_Button.Visible = false;
@@ -76,89 +76,50 @@ namespace Image_To_WebP_Converter
             Quality_value_text.Visible = false;
 
 
-            //SetupRadioButtonGroups(); // Call the method to create the groups
+
 
 
 
             Set_Image_Size_box.CheckedChanged += Set_Image_Size_box_CheckedChanged1;
             Add_Logo_box.CheckedChanged += Select_Logo_Button_VisibleChanged;
-            // Add event handler for checkbox checked change
+
             Add_Text_box.CheckedChanged += Add_Text_box_CheckedChanged;
-            Selected_Photos_ListBox.MouseWheel += ImagesListBox_MouseWheel; // Attach scroll event
-            HideScrollBarTrack(Selected_Photos_ListBox); // Initial hide            // Remove default form border
+            Selected_Photos_ListBox.MouseWheel += ImagesListBox_MouseWheel; 
+            HideScrollBarTrack(Selected_Photos_ListBox); 
             this.FormBorderStyle = FormBorderStyle.None;
 
-            // Apply rounded corners to form
+
             SetRoundedCorners(17);
 
-            // Apply rounded corners to button
-            MakeButtonRounded(SelectPhotosbtn, 12); // 15px corner radius
+            
+
+            MakeButtonRounded(SelectPhotosbtn, 12); 
             MakeButtonRounded(Select_Output, 12);
-            //MakeButtonRounded(ImageSize_WidthtrichTextBox, 12);
-            // Initialize the RichTextBox
+           
 
 
         }
 
-        //private void SetupRadioButtonGroups()
-        //{
-        //    // Create GroupBox for Text Position
-        //    GroupBox textPositionGroup = new GroupBox();
-        //    textPositionGroup.Text = "Text Position";
-        //    textPositionGroup.Size = new Size(200, 150);
-        //    textPositionGroup.Location = new Point(10, 10); // Adjust position as needed
-
-        //    // Add Text Position RadioButtons to Text Position GroupBox
-        //    textPositionGroup.Controls.Add(top_left_radio);
-        //    textPositionGroup.Controls.Add(left_center_radio);
-        //    textPositionGroup.Controls.Add(bottomleft__radio);
-        //    textPositionGroup.Controls.Add(top_center_radio2);
-        //    textPositionGroup.Controls.Add(center_radio);
-        //    textPositionGroup.Controls.Add(bottom_center_radio);
-        //    textPositionGroup.Controls.Add(top_right_radio3);
-        //    textPositionGroup.Controls.Add(right_center_radio);
-        //    textPositionGroup.Controls.Add(bottom_right_radio);
-
-        //    // Create GroupBox for Logo Position
-        //    GroupBox logoPositionGroup = new GroupBox();
-        //    logoPositionGroup.Text = "Logo Position";
-        //    logoPositionGroup.Size = new Size(200, 150);
-        //    logoPositionGroup.Location = new Point(220, 10); // Adjust position as needed
-
-        //    // Add Logo Position RadioButtons to Logo Position GroupBox
-        //    logoPositionGroup.Controls.Add(left_top_logo_radio);
-        //    logoPositionGroup.Controls.Add(top_center_logo_radio);
-        //    logoPositionGroup.Controls.Add(top_right_logo_radio);
-        //    logoPositionGroup.Controls.Add(center_left_logo_radio);
-        //    logoPositionGroup.Controls.Add(center_logo_radio);
-        //    logoPositionGroup.Controls.Add(right_center_logo_radio);
-        //    logoPositionGroup.Controls.Add(bottom_left_logo_radio);
-        //    logoPositionGroup.Controls.Add(bottom_center_logo_radio);
-        //    logoPositionGroup.Controls.Add(bottom_right_logo_radio);
-
-        //    // Add GroupBoxes to the form (or your container)
-        //    this.Controls.Add(textPositionGroup);
-        //    this.Controls.Add(logoPositionGroup);
-        //}
+       
 
 
         private void HideScrollBarTrack(ListBox listBox)
         {
-            ShowScrollBar(listBox.Handle, SB_VERT, false); // Hide scrollbar track
+            ShowScrollBar(listBox.Handle, SB_VERT, false); 
         }
         private void ImagesListBox_MouseWheel(object sender, MouseEventArgs e)
         {
-            int scrollPos = GetScrollPos(Selected_Photos_ListBox.Handle, SB_VERT); // Get current scroll position
-            SetScrollPos(Selected_Photos_ListBox.Handle, SB_VERT, scrollPos, true); // Keep the thumb visible
+            int scrollPos = GetScrollPos(Selected_Photos_ListBox.Handle, SB_VERT); 
+            SetScrollPos(Selected_Photos_ListBox.Handle, SB_VERT, scrollPos, true); 
 
-            HideScrollBarTrack(Selected_Photos_ListBox); // Re-hide scrollbar track
+            HideScrollBarTrack(Selected_Photos_ListBox); 
         }
 
 
         private void MakeButtonRounded(Button button, int radius)
         {
             button.FlatStyle = FlatStyle.Flat;
-            button.FlatAppearance.BorderSize = 0; // Remove default border
+            button.FlatAppearance.BorderSize = 0; 
 
             GraphicsPath path = new GraphicsPath();
             path.AddArc(0, 0, radius, radius, 180, 90);
@@ -177,8 +138,8 @@ namespace Image_To_WebP_Converter
             {
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
-                HideScrollBarTrack(Selected_Photos_ListBox); // Initial hide
-                Selected_Photos_ListBox.MouseWheel += ImagesListBox_MouseWheel; // Attach scroll event
+                HideScrollBarTrack(Selected_Photos_ListBox); 
+                Selected_Photos_ListBox.MouseWheel += ImagesListBox_MouseWheel; 
 
             }
         }
@@ -198,14 +159,14 @@ namespace Image_To_WebP_Converter
             path.CloseFigure();
 
             this.Region = new Region(path);
-            this.Invalidate(); // Redraw the form
+            this.Invalidate(); 
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
 
-            int borderThickness = 2; // Adjust border thickness
+            int borderThickness = 2; 
             Color borderColor = Color.Gray;
 
             using (Graphics g = e.Graphics)
@@ -213,7 +174,7 @@ namespace Image_To_WebP_Converter
             {
                 g.SmoothingMode = SmoothingMode.AntiAlias;
 
-                // Create a rounded rectangle border
+
                 int radius = 17;
                 GraphicsPath path = new GraphicsPath();
                 path.AddArc(borderThickness / 2, borderThickness / 2, radius, radius, 180, 90);
@@ -234,26 +195,29 @@ namespace Image_To_WebP_Converter
             {
                 openFileDialog.Title = "Select Images";
                 openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
-                openFileDialog.Multiselect = true; // Allow multiple image selection
+                openFileDialog.Multiselect = true; 
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    selectedFilePaths.Clear(); // Clear previous selections
+                    selectedFilePaths.Clear(); 
 
-                    // Add selected paths to the list
+                    
+
                     selectedFilePaths.AddRange(openFileDialog.FileNames);
 
-                    // Add the count of selected images to the ListBox
-                    Selected_Photos_ListBox.Items.Clear(); // Clear previous items
-                    Selected_Photos_ListBox.Items.Add($"{selectedFilePaths.Count} Images Selected"); // Show the count in the ListBox
-                    HideScrollBarTrack(Selected_Photos_ListBox); // Apply scrollbar customization
-                                                                 // Load the first selected image to get its size (if there are any selected)
+
+                    Selected_Photos_ListBox.Items.Clear();  
+                    Selected_Photos_ListBox.Items.Add($"{selectedFilePaths.Count} Images Selected"); 
+
+                    HideScrollBarTrack(Selected_Photos_ListBox); 
+
+                                                                 
                     if (selectedFilePaths.Count > 0)
                     {
-                        using (Image image = Image.FromFile(selectedFilePaths[0])) // Load the first image
+                        using (Image image = Image.FromFile(selectedFilePaths[0]))  
                         {
-                            WidthtextBox1.Text = image.Width.ToString(); // Set the width
-                            HeighttextBox2.Text = image.Height.ToString(); // Set the height
+                            WidthtextBox1.Text = image.Width.ToString();  
+                            HeighttextBox2.Text = image.Height.ToString();  
                         }
                     }
 
@@ -286,10 +250,10 @@ namespace Image_To_WebP_Converter
 
         private void Add_Text_box_CheckedChanged(object sender, EventArgs e)
         {
-            // Check if the checkbox is checked or unchecked
+
             if (Add_Text_box.Checked)
             {
-                // Show the RichTextBox if the checkbox is checked
+
                 Add_Text_RichBox.Visible = true;
                 FontSizetextBox1.Visible = true;
                 Add_Your_Text_Here.Visible = true;
@@ -305,12 +269,12 @@ namespace Image_To_WebP_Converter
                 bottomleft__radio.Visible = true;
                 bottom_center_radio.Visible=true;
                 bottom_right_radio.Visible=true;
-                // Set center_radio as the default checked radio button
+
                 center_radio.Checked = true;
             }
             else
             {
-                // Hide the RichTextBox if the checkbox is unchecked
+
                 Add_Text_RichBox.Visible = false;
                 FontSizetextBox1.Visible = false;
                 Add_Your_Text_Here.Visible = false;
@@ -334,7 +298,7 @@ namespace Image_To_WebP_Converter
             if (Add_Logo_box.Checked)
             {
                 center_logo_radio.Checked=true;
-                // Show the RichTextBox if the checkbox is checked
+
                 Select_Logo_Button.Visible = true;
                 Select_Logo_Button.Visible = true;
                 logo_position_text.Visible = true;
@@ -353,7 +317,7 @@ namespace Image_To_WebP_Converter
             }
             else
             {
-                // Hide the RichTextBox if the checkbox is unchecked
+
                 Select_Logo_Button.Visible = false;
                 Select_Logo_Button.Visible = false;
 
@@ -376,14 +340,14 @@ namespace Image_To_WebP_Converter
         {
             if (Set_Image_Size_box.Checked)
             {
-                // Show the RichTextBox if the checkbox is checked
+
                 WidthtextBox1.Visible = true;
                 HeighttextBox2.Visible = true;
                 Change_Image_W_H.Visible = true;
              }
             else
             {
-                // Hide the RichTextBox if the checkbox is unchecked
+
                 WidthtextBox1.Visible = false;
                 HeighttextBox2.Visible = false;
                 Change_Image_W_H.Visible = false;
@@ -392,11 +356,12 @@ namespace Image_To_WebP_Converter
         }
         private void FontSizetextBox1_TextChanged(object sender, EventArgs e)
         {
-            // Check if the input contains only digits
+
             if (!int.TryParse(FontSizetextBox1.Text, out _))
             {
-                // If not, reset the text box to the previous value or clear it
-                FontSizetextBox1.Text = string.Empty; // Clear the invalid input
+
+                FontSizetextBox1.Text = string.Empty; 
+
                 MessageBox.Show("Please enter a valid number for the Font Size.");
             }
         }
@@ -405,15 +370,15 @@ namespace Image_To_WebP_Converter
         {
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
-                folderDialog.Description = "Select Output Folder"; // Optional: you can customize the description
-                folderDialog.ShowNewFolderButton = true; // Optional: allows creating a new folder
+                folderDialog.Description = "Select Output Folder"; 
+                folderDialog.ShowNewFolderButton = true; 
 
-                // Show the folder browser dialog
+
                 if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string selectedFolder = folderDialog.SelectedPath; // Get the selected folder path
-                    Select_Folder_ListBox.Items.Clear(); // Clear any previous output paths
-                    Select_Folder_ListBox.Items.Add(selectedFolder); // Add the selected path to the ListBox
+                    string selectedFolder = folderDialog.SelectedPath; 
+                    Select_Folder_ListBox.Items.Clear(); 
+                    Select_Folder_ListBox.Items.Add(selectedFolder); 
                 }
             }
         }
@@ -424,7 +389,7 @@ namespace Image_To_WebP_Converter
             if (Select_Folder_ListBox.SelectedItem != null)
             {
                 string selectedPath = Select_Folder_ListBox.SelectedItem.ToString();
-                // Perform any additional actions you need with the selected path
+
                 MessageBox.Show("You selected: " + selectedPath);
             }
         }
@@ -435,15 +400,15 @@ namespace Image_To_WebP_Converter
         {
             using (FolderBrowserDialog folderDialog = new FolderBrowserDialog())
             {
-                folderDialog.Description = "Select Output Folder"; // Optional: you can customize the description
-                folderDialog.ShowNewFolderButton = true; // Optional: allows creating a new folder
+                folderDialog.Description = "Select Output Folder"; 
+                folderDialog.ShowNewFolderButton = true;
 
-                // Show the folder browser dialog
+
                 if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string selectedFolder = folderDialog.SelectedPath; // Get the selected folder path
-                    Select_Folder_ListBox.Items.Clear(); // Clear any previous output paths
-                    Select_Folder_ListBox.Items.Add(selectedFolder); // Add the selected path to the ListBox
+                    string selectedFolder = folderDialog.SelectedPath; 
+                    Select_Folder_ListBox.Items.Clear(); 
+                    Select_Folder_ListBox.Items.Add(selectedFolder); 
                 }
             }
         }
@@ -479,7 +444,7 @@ namespace Image_To_WebP_Converter
 
             if (!Add_Text_box.Checked)
             {
-                overlayText = ""; // No overlay text
+                overlayText = ""; 
             }
 
             Color textColor = Text_Color_btn.BackColor;
@@ -501,10 +466,10 @@ namespace Image_To_WebP_Converter
                         {
                             if (Set_Image_Quality_box.Checked)
                             {
-                                // Try to parse the text as an integer for quality
+
                                 if (int.TryParse(Quality_value_text.Text, out int quality))
                                 {
-                                    // Ensure the quality is within a valid range (0 to 100)
+
                                     if (quality < 0) quality = 0;
                                     else if (quality > 100) quality = 100;
 
@@ -512,14 +477,14 @@ namespace Image_To_WebP_Converter
                                 }
                                 else
                                 {
-                                    // If parsing fails, you can set a default quality value or show an error
+
                                     MessageBox.Show("Please enter a valid number for the image quality.");
-                                    SaveAsWebP(modifiedImage, outputFilePath, 100); // Default quality value
+                                    SaveAsWebP(modifiedImage, outputFilePath, 100); 
                                 }
                             }
                             else
                             {
-                                SaveAsWebP(modifiedImage, outputFilePath, 100); // Default quality value
+                                SaveAsWebP(modifiedImage, outputFilePath, 100); 
                             }
 
 
@@ -556,17 +521,17 @@ namespace Image_To_WebP_Converter
             using (Graphics g = Graphics.FromImage(bitmap))
             {
 
-                // Overlay the logo if a valid path is provided
+
                 if (!string.IsNullOrEmpty(logoPath) && File.Exists(logoPath) && Add_Logo_box.Checked)
                 {
                     using (Image logo = Image.FromFile(logoPath))
                     {
-                        // Use provided width & height if valid; otherwise, scale automatically
+
                         int logoWidth = int.TryParse(Logo_Width.Text, out int lw) && lw > 0 ? lw : bitmap.Width / 5;
                         int logoHeight = int.TryParse(Logo_Height.Text, out int lh) && lh > 0 ? lh : (int)((float)logo.Height / logo.Width * logoWidth);
-                        int logoX = 0, logoY = 0; // Default to top-left
+                        int logoX = 0, logoY = 0; 
 
-                        // Determine logo position based on selected radio button
+
                         if (left_top_logo_radio.Checked) { logoX = 0; logoY = 0; }
                         else if (top_center_logo_radio.Checked) { logoX = (bitmap.Width - logoWidth) / 2; logoY = 0; }
                         else if (top_right_logo_radio.Checked) { logoX = bitmap.Width - logoWidth; logoY = 0; }
@@ -585,7 +550,7 @@ namespace Image_To_WebP_Converter
                 SizeF textSize = g.MeasureString(text, font);
                 float x = 0, y = 0;
 
-                // Position text based on selected radio button
+
                 if (top_left_radio.Checked) { x = 0; y = 0; }
                 else if (left_center_radio.Checked) { x = 0; y = (bitmap.Height - textSize.Height) / 2; }
                 else if (bottomleft__radio.Checked) { x = 0; y = bitmap.Height - textSize.Height; }
@@ -614,28 +579,28 @@ namespace Image_To_WebP_Converter
         {
             using (var bitmap = new Bitmap(image))
             {
-                byte[] webpBytes = Dynamicweb.WebP.Encoder.Encode(bitmap, quality); // Call as a static method
+                byte[] webpBytes = Dynamicweb.WebP.Encoder.Encode(bitmap, quality); 
                 File.WriteAllBytes(outputFilePath, webpBytes);
             }
         }
 
         private void WidthtextBox1_TextChanged(object sender, EventArgs e)
         {
-            // Check if the input contains only digits
+
             if (!int.TryParse(WidthtextBox1.Text, out _))
             {
-                // If not, reset the text box to the previous value or clear it
-                WidthtextBox1.Text = string.Empty; // Clear the invalid input
+
+                WidthtextBox1.Text = string.Empty; 
                 MessageBox.Show("Please enter a valid number for the width.");
             }
         }
         private void HeighttextBox2_TextChanged(object sender, EventArgs e)
         {
-            // Check if the input contains only digits
+
             if (!int.TryParse(HeighttextBox2.Text, out _))
             {
-                // If not, reset the text box to the previous value or clear it
-                HeighttextBox2.Text = string.Empty; // Clear the invalid input
+
+                HeighttextBox2.Text = string.Empty; 
                 MessageBox.Show("Please enter a valid number for the heigh.");
             }
         }
@@ -647,7 +612,7 @@ namespace Image_To_WebP_Converter
             {
                 openFileDialog.Title = "Select Logo Image";
                 openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif";
-                openFileDialog.Multiselect = false; // Allow only one selection
+                openFileDialog.Multiselect = false;
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
@@ -656,7 +621,7 @@ namespace Image_To_WebP_Converter
                     Logo_Height.Text=Image.FromFile(selectedLogoPath).Height.ToString();
                     Logo_Width.Text = Image.FromFile(selectedLogoPath).Width.ToString();
 
-                    // Set logo as button background
+
                     Select_Logo_Button.BackgroundImage = Image.FromFile(selectedLogoPath);
                     Select_Logo_Button.BackgroundImageLayout = ImageLayout.Stretch;
                 }
@@ -675,10 +640,10 @@ namespace Image_To_WebP_Converter
 
         private void Text_Color_btn_Click(object sender, EventArgs e)
         {
-            // Show the color dialog
+
             if (colorDialog.ShowDialog() == DialogResult.OK)
             {
-                // Apply the selected color to the text in the Add_Text_RichBox
+
                 Text_Color_btn.BackColor = colorDialog.Color;
             }
         }
@@ -745,22 +710,22 @@ namespace Image_To_WebP_Converter
 
         private void Logo_Width_TextChanged(object sender, EventArgs e)
         {
-            // Check if the input contains only digits
+
             if (!int.TryParse(Logo_Width.Text, out _))
             {
-                // If not, reset the text box to the previous value or clear it
-                Logo_Width.Text = string.Empty; // Clear the invalid input
+
+                Logo_Width.Text = string.Empty; 
                 MessageBox.Show("Please enter a valid number for the width.");
             }
         }
 
         private void Logo_Height_TextChanged(object sender, EventArgs e)
         {
-            // Check if the input contains only digits
+
             if (!int.TryParse(Logo_Height.Text, out _))
             {
-                // If not, reset the text box to the previous value or clear it
-                Logo_Height.Text = string.Empty; // Clear the invalid input
+
+                Logo_Height.Text = string.Empty; 
                 MessageBox.Show("Please enter a valid number for the height.");
             }
         }
@@ -804,7 +769,7 @@ namespace Image_To_WebP_Converter
 
 
 
-        //data gridview
+
 
     }
 }

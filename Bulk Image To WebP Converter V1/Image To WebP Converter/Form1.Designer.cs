@@ -660,7 +660,6 @@ namespace Image_To_WebP_Converter
         private System.Windows.Forms.CheckBox Add_Text_box;
         private System.Windows.Forms.CheckBox Set_Image_Size_box;
         private System.Windows.Forms.ListBox Select_Folder_ListBox;
-        //private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button Convert;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Select_Output;
