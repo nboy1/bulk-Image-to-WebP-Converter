@@ -15,7 +15,7 @@
 
 ### **Download the Setup (Recommended)**
 
-1. Download the latest release from the [Releases](https://github.com/nboy1/ImageToWebPConverter/releases) section.
+1. Download the latest release from the [Releases](https://github.com/nboy1/bulk-Image-to-WebP-Converter/releases) section.
 2. Run the installer (`ImageToWebPConverter-Setup.exe`).
 3. Follow the on-screen instructions to complete the installation.
 4. Open the software and start converting your images!
