@@ -15,7 +15,7 @@
 - Add text to images with customizable text color and size.
 - Supports PNG, JPG, BMP, and other common image formats.
 - Open-source and free to use.
-- 
+  
 
 ---
 
